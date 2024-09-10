@@ -1,0 +1,58 @@
+Hello, and welcome!
+In this video, we're going to show you how to create a word cloud in the R programming
+language.
+A word cloud is an image composed of words that occur in a particular text or subject.
+The size of a word indicates its frequency or its importance.
+To create a word cloud, we'll need a text file, like the one here.
+So to keep things organized, let's use the 'dir.create' method to create a directory
+for our file.
+We'll then use the 'download.file' method to download the file into our new directory
+by providing the file path.
+Taking a closer look, these two sample paragraphs are from the text 'Churchill Speeches'.
+So let's use this text to make our word cloud.
+In order to do so, you'll need to install a couple of external libraries if you haven't
+already done so.
+'tm' stands for text mining, and this package will transform the text into a format that's
+handled by R.
+And the 'wordcloud' package will create the visualization.
+After the packages are installed, make sure to load the libraries using the 'library'
+method.
+Now, we'll import the data by creating a directory source, which will point to the directory
+that holds our text file.
+The Corpus method will load the data from that directory.
+We can use the 'inspect' method to check the structure of our text Corpus.
+There is only one document in our corpus, since the directory only has one file.
+Going through a data cleaning process will improve both the quality of the data, and
+the resulting visualization.
+We'll first convert the text to lower case.
+Then we'll remove all numbers with the 'removeNumbers' argument.
+Afterwards, we'll remove common stop words like 'the' and 'we'.
+You can even remove your own stop words by specifying the words in a character vector.
+Then we'll remove punctuation with the 'removePunctuation' argument, and finally, we'll remove unnecessary
+whitespace with the 'stripwhitespace' argument.
+The next step is to create a term document matrix, which is a table that contains the
+frequency of the words.
+We'll use the 'TermDocumentMatrix' function while passing in our speech corpus.
+We also need to use the 'as.matrix' function to transform the result into a matrix.
+Our next step is to sort the words by frequency, from highest to lowest.
+And finally we'll create a data frame with the words and their frequencies.
+The head function will display the first several elements, so you can get an idea of what the
+words and the frequencies look like.
+We'll now create our word cloud using the 'wordcloud' function.
+We'll use the words and frequencies from our previously created data frame.
+You can see that this produces a simple word cloud, with the most common words being the
+largest.
+You can also adjust the number of words by specifying the minimum frequency.
+In this case, all words with a frequency of 1 or greater will be displayed.
+Or you can impose a limit on the number of words that can be displayed.
+Here we specify that the word cloud can display 250 words at most.
+The black and white word cloud was a bit dull to look at, so to spruce things up we can
+adjust the 'colors' parameter by providing a color palette.
+You can also create a word cloud with the structure you see here.
+Notice that the frequency diminishes outward from the center in concentric circles.
+By default, the 'random.order' parameter is TRUE, so to create this structure, you need
+to explicitly set it to FALSE.
+By now, you should understand the structure and purpose of a word cloud.
+You should also know how to create one in the R programming language, as well as how
+to adjust its shape and its color.
+Thank you for watching this video.
